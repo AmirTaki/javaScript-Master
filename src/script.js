@@ -1,27 +1,62 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = "- object math";
+document.getElementById("text").innerHTML = "- object string";
 
 
-// -object math
-
-console.log(Math.PI)
-
-console.log(Math.random())
+// -object string
 
 
-function getRandomArbitray(min, max){
-    return Math.floor(Math.random() * (max-min) + min);
-}
 
-console.log(getRandomArbitray(1, 1000))
+//ما در اسکریپت دو نوع آبجکت داریم 
 
-console.log(Math.round(1.5))
+// 1-string primive
 
-console.log(Math.round(2.9))
+const message = "javaScript cooding is cool"
 
-console.log(Math.max(2, 9, 4, 645))
+// 2- string object
+const another = new String(message)
 
-console.log(Math.min(2, 9, 4, -645))
 
-console.log(Math.abs(-5))
+console.log(typeof(message))
 
+console.log(typeof(another))
+
+console.log(message)
+// message. => convert primive to object
+
+console.log(message.length)
+
+console.log(message[3]);
+
+console.log(message.includes('is'));
+
+console.log(message.startsWith('co'));
+
+console.log(message.endsWith('cool'));
+
+console.log(message.indexOf("coo"));
+
+console.log(message.indexOf("m"));
+
+console.log(message.replace("cooding","code"));
+
+console.log(message.toLowerCase());
+
+console.log(message.toUpperCase());
+
+const mess = "  javaScript cooding is cool   " 
+
+console.log(mess.trim())
+
+console.log(mess.trimLeft())
+
+console.log(mess.trimRight())
+
+
+const text = 'javaScript cooding\n is \"cool\" alpha   '
+console.log(text)
+
+console.log(mess.split(' '))
+
+console.log(mess.split('a'))
+
+console.log('java-Script-cooding-is-cool-'.split('-'))
