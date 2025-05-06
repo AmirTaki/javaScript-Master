@@ -1,20 +1,19 @@
 console.log('javaScript Master');
-// Variables
+// Constants
 
 let name  = "javaSctipt";
 console.log (name)
 
+name = "amir";
+console.log(name)
 
 
-// قوانین نام گذاری
-// از اسم کلیدی نمیتوان  برای نام کذاری انتخاب کرد  
-// let, if, ......
 
-let userName = "amir";
-console.log(userName);
-
-let lastName = "taki";
-console.log(lastName);
+const lastName = "taki" // Constants 
+console.log(lastName)
 
 
-document.getElementById("text").innerHTML = userName +  " "+ lastName;
+// lastName = "test"    Eror
+console.log(lastName)
+
+document.getElementById("text").innerHTML = name +  " "+ lastName;
