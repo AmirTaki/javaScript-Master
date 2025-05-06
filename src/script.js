@@ -1,8 +1,8 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = "Navigating the properties of an object";
+document.getElementById("text").innerHTML = "- Clone an object";
 
 
-// Navigating the properties of an object
+// - Clone an object
 
 const circle = {
     radius : 1, 
@@ -11,57 +11,22 @@ const circle = {
     }
 }
 
+const another = circle;
+
+// راه حل اول
+const anotherOne = {}
+
 for (let key in circle){
-    console.log(key , " : " , circle[key])
+    anotherOne[key] = circle[key]
+    
 }
+console.log(anotherOne)
 
-// warning : Uncaught TypeError: circle is not iterable
-// Uncaught TypeError: دایره قابل تکرار نیست
+// راه حل دوم
+const anotherTwo = Object.assign({color: "black"}, circle)
 
-// for (let key of circle){
-//     console.log(key , " : " , circle[key])
-// }
+console.log(anotherTwo)
 
-
-// نکته آبجکت ها ایتریبل (قابل تکرار)نیستند
-
-let circleKeys = Object.keys(circle);
-console.log(circleKeys)
-
-
-
-for(let key of circleKeys){
-    console.log(key)
-}
-
-console.log('----------')
-
-let circlevalues = Object.values(circle)
-
-for (let i = 0; i < circleKeys.length; i++){
-    console.log(circleKeys[i] ,":",circlevalues[i])
-}
-
-
-console.log('----------')
-
-
-const x = {value : 1}  // => const x = new Object()
-
-let circleEntries = Object.entries(circle)
-console.log(circleEntries)
-
-console.log('----------')
-
-for(let  entry of circleEntries){
-    console.log(entry)
-}
-
-
-console.log('----------')
-
-if ('radius' in circle){
-    console.log('yes')
-}
-console.log('draw' in circle)
-
+// راه حل سوم
+const anotherThree = {location : "usa",color:"red", ...circle}
+console.log(anotherThree)
