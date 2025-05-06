@@ -2,36 +2,41 @@ console.log('javaScript Master');
 
 
 // Refernce Types
-// 1 - Object type  همانند اشیا در دنیای واقعی
+// 2- Array type
 
-let name = "amir";
-let age = 28;
-let admin = true;
+let users = ["amir", "mani"]
+console.log(users)
+console.log(typeof(users))
 
-// let nameObject = {
-//     key : value
-// }
+console.log(users[0]);
+console.log(users[1]);
+console.log(users[2]);
 
+users[2] = "javaScript";
 
-let person = {
-    name : "amir",
-    age : 28,
-    admin: true
-}
+console.log(users[2]);
 
-console.log(person)
-console.log(typeof(person))
+users[3] = 123;
 
+users[4] = false;
 
-console.log(person.name)
-console.log(person.age)
-console.log(person.admin)
+console.log(users[3])
 
-
-console.log(person["name"])
-console.log(person["age"])
-console.log(person["admin"])
+console.log(users[4])
 
 
 
-document.getElementById("text").innerHTML = " Refernce Types : 1- Object type";
+console.log(typeof(users))
+console.log(typeof users)
+// نکته در واقع آرایه ها نوعی آبجکت هستند
+//  ['amir', 'mani']
+// 0: "amir"
+// 1: "mani"
+// 2: "javaScript"
+// 3: 123
+// 4: falselength: 
+// 5[[Prototype]]: Array(0)
+
+console.log(users.length)
+
+document.getElementById("text").innerHTML = " Refernce Types : 2- Array type";
