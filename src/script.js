@@ -1,26 +1,37 @@
 console.log('javaScript Master');
 
 
-// زبان برنامه نویسی دو دسته هستند داینامیک یا استاتیک
+// Refernce Types
+// 1 - Object type  همانند اشیا در دنیای واقعی
 
-// در زبان های استاتیک وقتی نوع اولیه متغییر مشخص شد نوع آن قابل تغییر نیست
+let name = "amir";
+let age = 28;
+let admin = true;
 
-let name = "amir"
-
-console.log(name, typeof(name))
-
-name = 120;
-console.log(name , typeof(name))
-
-name = false;
-console.log(name, typeof(name))
-
-name = undefined ;
-console.log(name, typeof(name))
-
-name = null;
-console.log(name, typeof(name))
+// let nameObject = {
+//     key : value
+// }
 
 
+let person = {
+    name : "amir",
+    age : 28,
+    admin: true
+}
 
-document.getElementById("text").innerHTML = " JavaScript is dynamic";
+console.log(person)
+console.log(typeof(person))
+
+
+console.log(person.name)
+console.log(person.age)
+console.log(person.admin)
+
+
+console.log(person["name"])
+console.log(person["age"])
+console.log(person["admin"])
+
+
+
+document.getElementById("text").innerHTML = " Refernce Types : 1- Object type";
