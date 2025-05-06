@@ -1,33 +1,33 @@
 console.log('javaScript Master');
 
 
-// Arithmetic operators
-let x = 10;
-let y = 5;
+//- Assignment operators
+// =  
+let x = 3;
+let y = 10;
 
-console.log(x + y)
-
-console.log(x - y)
-
-console.log(x / y)
-
-console.log(x * y)
-
-console.log(x % y) // باقی مانده تقسیم
-
-console.log(x ** y)
-
-console.log(x++)
-
+x = x + y
 console.log(x)
 
-console.log(++x)
-
-console.log(y--)
-
-console.log(y)
-
-console.log(--y)
+// += -= *= /= %= 
 
 
-document.getElementById("text").innerHTML = "  Arithmetic operators";
+n = 12;
+m = 10;
+
+n += m// n = n + m
+console.log(n)
+
+a = 2,
+b = 3
+a *= b // a = a * b
+console.log(a)
+
+
+let f = 10;
+let j = 20;
+
+j %= f  //j = j % f
+console.log(j)
+
+document.getElementById("text").innerHTML = "  - Assignment operators";
