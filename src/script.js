@@ -1,20 +1,19 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = " - Arrow Function";
+document.getElementById("text").innerHTML = " - Remove element from array";
 
-// Arrow Function
+// - Remove element from array
 
-const course = [
-    {id : 1, name : "a"},
-    {id : 2, name : "b"}
-];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 
-// const result = course.find(function(course){
-//     return course.name === "a";
-// })    
-// console.log(result)
+const last = numbers.pop();
 
+console.log(last) 
+console.log(numbers) 
 
-const result = course.find((course)=>course.name === "a")
+const first = numbers.shift();
+console.log(first)
+console.log(numbers)
 
+const result = numbers.splice(3, 2);
 console.log(result)
-
+console.log(numbers)
