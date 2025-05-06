@@ -1,19 +1,33 @@
 console.log('javaScript Master');
-// Constants
-
-let name  = "javaSctipt";
-console.log (name)
-
-name = "amir";
-console.log(name)
+// Primary types (Primitives)
 
 
+//1- primitve (vlaue) types
 
-const lastName = "taki" // Constants 
-console.log(lastName)
+// string
+// number
+// boolean
+// undefined
+// null
+// 2- reference types
+
+let name = "amir"
+let age = 28;
+let admin = true;
+let lastName ;
+let tall = null;
+
+console.log(typeof(name))  // string
+console.log(typeof(age))   // number
+console.log(typeof(admin)) // boolean
+console.log(typeof(lastName))       // undefined
+console.log(typeof(tall))           // null
+
+tall = "amir"
+console.log(tall, typeof(tall)) 
+
+tall = 170;
+console.log(tall, typeof(tall))
 
 
-// lastName = "test"    Eror
-console.log(lastName)
-
-document.getElementById("text").innerHTML = name +  " "+ lastName;
+document.getElementById("text").innerHTML = " primitve (vlaue) types";
