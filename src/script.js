@@ -1,16 +1,15 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = "  -Bitwise operators";
+document.getElementById("text").innerHTML = "  Operator precedence";
 
-// Bitwise operators
-// 0 1
+// Operator precedence
 
-// 00000001 = 1
-// 00000010 = 2
-// _____________
-// 00000011 = 3
-// 00000000 = 0
-// bitwise AND : &
-// bitwise OR  : |
+let x = 5 + 3 * 10
+console.log(x)
 
-console.log(1 | 2)
-console.log(1 & 2)
+x = (5 + 3) * 10
+console.log(x)
+
+x = 5 + (3 * 10)
+console.log(x)
+
+// () * / + -
