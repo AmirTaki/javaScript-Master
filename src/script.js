@@ -1,11 +1,29 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = " - Loop while";
+document.getElementById("text").innerHTML = " - Loop do-while";
 
 // Loop 
-// while
-let i = 0; 
-while(i < 100){
+// do-while
 
-    console.log(((i%5) == 0) ? i : -1)
-    i++;
+let x = 0;
+do{
+    console.log(x--)
 }
+while(x > -10)
+
+console.log('-----------')
+
+let n = 100;
+do {
+    console.log(n++)
+}
+while(n > 200)
+
+console.log('-----------')
+
+let counter = 0;
+let bool = true;
+do {
+    console.log(++counter)
+    bool = counter === 100 ? false : true
+}
+while (bool)
