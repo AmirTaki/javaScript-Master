@@ -1,33 +1,52 @@
 console.log('javaScript Master');
+document.getElementById("text").innerHTML = "  - Comparison operators";
 
 
-//- Assignment operators
-// =  
-let x = 3;
-let y = 10;
+//-  Comparison operators
+// < > = <= >=   : relational
+let x = 1;
 
-x = x + y
-console.log(x)
+console.log(x > 1)  // false
 
-// += -= *= /= %= 
+console.log(x >= 1) // true
 
+console.log(x <= 1) // true
 
-n = 12;
-m = 10;
+// equality
 
-n += m// n = n + m
-console.log(n)
+// 1- lose equality
+// == !=
 
-a = 2,
-b = 3
-a *= b // a = a * b
-console.log(a)
+console.log(x == 1) // true
 
+console.log(x != 1) // false
 
-let f = 10;
-let j = 20;
+console.log(true == 1)  // true => boolean (true) == int (1:ture)
 
-j %= f  //j = j % f
-console.log(j)
+console.log(false == 1)  // false => boolean (false) != int (1:true)
 
-document.getElementById("text").innerHTML = "  - Assignment operators";
+console.log(false == 0)  // true => boolean (false) != int (0:false)
+
+console.log(false != 1) // true => boolean(false) != (1:ture)
+
+console.log("script equality")
+
+// 2- script equality
+// ===  !==
+
+console.log(1 === 1) // true  => type (int) === type (int)
+
+console.log('1' === 1) // false => type(string) !== type(int)
+
+console.log('1' == 1) // true => 1 == 1 : notImportant type
+
+console.log(true === 1) // false =>  type (bollan) !== type(int)
+
+console.log(false === true) // flase => type (false:boolean) === (true:boolean) & flase !== true => false
+
+console.log("word" === true) //false =>type(string:true) === type(string:true) & string != true => true & false => false
+
+console.log("" == false) // ture =>  string != boolean
+
+console.log("" === false) //false => type (string) !== boolean & string != boolean => false & false
+
