@@ -1,25 +1,29 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = " - Conditional if-els statement";
+document.getElementById("text").innerHTML = " - switch-case";
 
-// - Conditional if-els statement
+// - switch-case
+let role = "admin";
 
-// 6am - 12pm -> good morning
+switch(role){
+    case "guest":
+        console.log("gest User");
+        break;
 
-// 12pm - 6px -> good afternoon
-
-// otherwise  -> good evening
-
-
-let hour = 15;
-if (6 <= hour  && hour < 12) 
-{
-    console.log("good morning")
+    case "admin":
+        console.log("admin User");
+        break;
+    
+    default :
+        console.log("unknown User");
 }
-else if(13 <= hour && hour <18)
-{
-    console.log("good afternoon")
+
+if (role == "guest"){
+    console.log("gest User");
 }
-else 
-{
-    console.log("good evening")
+
+else if (role == "admin"){
+    console.log("admin User");
+}
+else {
+    console.log("unknown User")
 }
