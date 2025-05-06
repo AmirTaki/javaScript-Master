@@ -1,28 +1,45 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = "template literal";
+document.getElementById("text").innerHTML = "object Date";
 
-//template literal
+// object Date
+const now = new Date();
+console.log(now)
 
-const message = "\'JavaScript\' . \n '' coding is cool" 
+const dateOne = new Date("May 11 2018 09:00");
+console.log(dateOne)
 
-
-// literal 
-// ubject = {}
-// bollean = true, false
-// string ' "
-// string `
-
-const text = ` 'JavaScript' .
-coodin is cool
-`;
-
-console.log(text)
+const dateTwo = new Date(2018,0,11, 9,0);  // year, month, day, hours, min
+console.log(dateTwo)
 
 
-let name = "amir"
+console.log(now.toDateString());
 
-const msg = "hi " + name  +". thank you"
-console.log(msg)
+console.log(dateOne.toDateString());
+
+console.log(dateTwo.toDateString());
+
+console.log(now.toISOString());
+
+console.log(now.getDate());
+
+console.log(now.getDay());
+
+console.log(now.getMonth());
+
+console.log(now.getHours());
+
+console.log(now.getMinutes());
+
+console.log(now.getFullYear());
 
 
-console.log(`hi ${name} . thank you`)
+// convert 
+console.log(now.setFullYear(2030))
+
+console.log(now)
+
+dateOne.setFullYear(2040)
+console.log(dateOne)
+
+dateTwo.setHours(22)
+console.log(dateTwo)
