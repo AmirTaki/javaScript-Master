@@ -1,40 +1,75 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = "- Functions are objects";
+document.getElementById("text").innerHTML = "- - Difference between primitive and reference types";
+
+//  1- value types (primitive)
+// Number
+// String 
+// Boolean
+// Symbol
+// undifined
+// null
+
+// 2- Reference Types 
+// object
+// function
+// array
 
 
+// نکته در جاوااسکریپت دونوع تایپ داریم
+// 1 - primtive   2- reference
 
-// - Functions are objects
 
-function Circle (radius, ){
-    this.radius = radius;
-    this.draw = function(){
-        console.log("Constractor function")
-    }
+// - Difference between primitive and reference types
+
+// رفتار پرایمتیو تایپ
+let x = 10;
+let y = x;
+
+console.log("x :" ,x)
+
+x = 20 
+
+console.log("x :" ,x)
+console.log("y :", y)
+
+
+// x , y از همدیگر مستقل اند
+// ما وقتی ازانواع پریمرتی استفاده میکنیم مقدار مد نظر در ان کپی میشود و همین طور مجدد 
+
+// رفتار رفرنس تایپ
+
+let t = {vlaue : 10};
+let tC = t
+
+console.log ("t:value: ",t.vlaue)
+console.log ("tC:value: ",tC.vlaue)
+
+t.vlaue = 11;
+console.log ("t:value: ",t.vlaue)
+console.log ("tC:value: ",tC.vlaue)
+
+// چون آبجکت درون آن دخیره نمیشود
+// و فقط آدرس آن در آن ذخیره میشود
+
+// نکته : در پرامیتس تایپ ها به وسیله مقدار  آن کپی میشود
+// اما در رفرنس تایپ ها به وسیله آدرس آن کپی میشوند.
+
+
+// primitive
+let number = 10;
+
+function increase (number){
+    number++;
 }
 
-const another = new Circle(2);
+increase(number);
+console.log(number)
 
-console.log(Circle)
-console.log(Circle.name)
-console.log(Circle.length)  // property
-console.log(Circle.constructor) // function ->
+// reference
+let numberObj = {value : 10}
 
-// function = new function ('parametr' , 'cood function') 
-const circle1 = new Function('radius',`
-    this.radius = radius;
-    this.draw = function(){
-    console.log("Constractor function")
-    }
- `
-) 
-
-const circle = new circle1(5);
-console.log(circle)
-
-
-// Circle.call({}, property)
-Circle.call({}, 1)  //  == const another = new Circle(2);
-
-
-// Circle.apply({}, [property])
-Circle.apply({}, [1]) // == const another = new Circle(2);
+function increaseObj (object) {
+    object.value++;
+}
+increaseObj(numberObj)
+console.log(numberObj)
