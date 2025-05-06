@@ -1,29 +1,22 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = " - switch-case";
+document.getElementById("text").innerHTML = " - Loop for";
 
-// - switch-case
-let role = "admin";
+// Loop 
+// for 
+// while
+// do while
+// for .. int
+// for .. out
 
-switch(role){
-    case "guest":
-        console.log("gest User");
-        break;
 
-    case "admin":
-        console.log("admin User");
-        break;
-    
-    default :
-        console.log("unknown User");
+for (let i = 0; i < 5; i++){
+    console.log("javaScritp Master");
+    console.log(i)
 }
 
-if (role == "guest"){
-    console.log("gest User");
-}
 
-else if (role == "admin"){
-    console.log("admin User");
-}
-else {
-    console.log("unknown User")
+for (let i = 300; i > 50; i--){
+    if (i % 2 == 0){
+        console.log(i)
+    }
 }
