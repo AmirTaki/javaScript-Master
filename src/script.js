@@ -1,45 +1,16 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = "object Date";
+document.getElementById("text").innerHTML = " Add element to array";
 
-// object Date
-const now = new Date();
-console.log(now)
+// - Add element to array
+const numbers = [3, 4];
+console.log(numbers)
 
-const dateOne = new Date("May 11 2018 09:00");
-console.log(dateOne)
+numbers.push(5, 6)
+console.log(numbers)
 
-const dateTwo = new Date(2018,0,11, 9,0);  // year, month, day, hours, min
-console.log(dateTwo)
+numbers.unshift(0, 1, 2)
+console.log(numbers)
 
+numbers.splice(2, 0, "javaScript", "practice", -100)
+console.log(numbers)
 
-console.log(now.toDateString());
-
-console.log(dateOne.toDateString());
-
-console.log(dateTwo.toDateString());
-
-console.log(now.toISOString());
-
-console.log(now.getDate());
-
-console.log(now.getDay());
-
-console.log(now.getMonth());
-
-console.log(now.getHours());
-
-console.log(now.getMinutes());
-
-console.log(now.getFullYear());
-
-
-// convert 
-console.log(now.setFullYear(2030))
-
-console.log(now)
-
-dateOne.setFullYear(2040)
-console.log(dateOne)
-
-dateTwo.setHours(22)
-console.log(dateTwo)
