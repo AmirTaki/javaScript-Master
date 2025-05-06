@@ -1,15 +1,25 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = "  Operator precedence";
+document.getElementById("text").innerHTML = " - Conditional if-els statement";
 
-// Operator precedence
+// - Conditional if-els statement
 
-let x = 5 + 3 * 10
-console.log(x)
+// 6am - 12pm -> good morning
 
-x = (5 + 3) * 10
-console.log(x)
+// 12pm - 6px -> good afternoon
 
-x = 5 + (3 * 10)
-console.log(x)
+// otherwise  -> good evening
 
-// () * / + -
+
+let hour = 15;
+if (6 <= hour  && hour < 12) 
+{
+    console.log("good morning")
+}
+else if(13 <= hour && hour <18)
+{
+    console.log("good afternoon")
+}
+else 
+{
+    console.log("good evening")
+}
