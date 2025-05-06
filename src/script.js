@@ -1,75 +1,67 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = "- - Difference between primitive and reference types";
-
-//  1- value types (primitive)
-// Number
-// String 
-// Boolean
-// Symbol
-// undifined
-// null
-
-// 2- Reference Types 
-// object
-// function
-// array
+document.getElementById("text").innerHTML = "Navigating the properties of an object";
 
 
-// نکته در جاوااسکریپت دونوع تایپ داریم
-// 1 - primtive   2- reference
+// Navigating the properties of an object
 
-
-// - Difference between primitive and reference types
-
-// رفتار پرایمتیو تایپ
-let x = 10;
-let y = x;
-
-console.log("x :" ,x)
-
-x = 20 
-
-console.log("x :" ,x)
-console.log("y :", y)
-
-
-// x , y از همدیگر مستقل اند
-// ما وقتی ازانواع پریمرتی استفاده میکنیم مقدار مد نظر در ان کپی میشود و همین طور مجدد 
-
-// رفتار رفرنس تایپ
-
-let t = {vlaue : 10};
-let tC = t
-
-console.log ("t:value: ",t.vlaue)
-console.log ("tC:value: ",tC.vlaue)
-
-t.vlaue = 11;
-console.log ("t:value: ",t.vlaue)
-console.log ("tC:value: ",tC.vlaue)
-
-// چون آبجکت درون آن دخیره نمیشود
-// و فقط آدرس آن در آن ذخیره میشود
-
-// نکته : در پرامیتس تایپ ها به وسیله مقدار  آن کپی میشود
-// اما در رفرنس تایپ ها به وسیله آدرس آن کپی میشوند.
-
-
-// primitive
-let number = 10;
-
-function increase (number){
-    number++;
+const circle = {
+    radius : 1, 
+    draw() {
+        console.log("draw")
+    }
 }
 
-increase(number);
-console.log(number)
-
-// reference
-let numberObj = {value : 10}
-
-function increaseObj (object) {
-    object.value++;
+for (let key in circle){
+    console.log(key , " : " , circle[key])
 }
-increaseObj(numberObj)
-console.log(numberObj)
+
+// warning : Uncaught TypeError: circle is not iterable
+// Uncaught TypeError: دایره قابل تکرار نیست
+
+// for (let key of circle){
+//     console.log(key , " : " , circle[key])
+// }
+
+
+// نکته آبجکت ها ایتریبل (قابل تکرار)نیستند
+
+let circleKeys = Object.keys(circle);
+console.log(circleKeys)
+
+
+
+for(let key of circleKeys){
+    console.log(key)
+}
+
+console.log('----------')
+
+let circlevalues = Object.values(circle)
+
+for (let i = 0; i < circleKeys.length; i++){
+    console.log(circleKeys[i] ,":",circlevalues[i])
+}
+
+
+console.log('----------')
+
+
+const x = {value : 1}  // => const x = new Object()
+
+let circleEntries = Object.entries(circle)
+console.log(circleEntries)
+
+console.log('----------')
+
+for(let  entry of circleEntries){
+    console.log(entry)
+}
+
+
+console.log('----------')
+
+if ('radius' in circle){
+    console.log('yes')
+}
+console.log('draw' in circle)
+
