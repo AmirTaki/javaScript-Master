@@ -1,29 +1,49 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = " - Loop do-while";
-
+document.getElementById("text").innerHTML = " - Loop for in & for out";
 // Loop 
-// do-while
+// برای پیمایش کردن روی آرایه استفاده میشود
+// for in 
 
-let x = 0;
-do{
-    console.log(x--)
+const numbers = [1, 2, 3, 4, 5, 6]
+
+for (let i = 0 ; i < numbers.length; i++){
+    console.log(i)
 }
-while(x > -10)
 
-console.log('-----------')
-
-let n = 100;
-do {
-    console.log(n++)
+const person = {
+    name : "amir",
+    lastName : "taki",
+    age : "28"
 }
-while(n > 200)
 
-console.log('-----------')
+//warning : for not object
 
-let counter = 0;
-let bool = true;
-do {
-    console.log(++counter)
-    bool = counter === 100 ? false : true
+// for (let i = 0 ; i < person.length; i++){
+//     console.log(i)
+// }
+
+
+for (let key in person){
+    console.log(key +  "  -->  " + person[key])
 }
-while (bool)
+
+// -------------------------------------
+for (let index in numbers){
+    console.log(index + " : " + numbers[index])
+}
+
+console.log("---------------------- FOR OUT --------------------------------")
+
+
+// for out
+const colors = ["black", "blue", "brown", "green", "red", "white", "yellow"]
+
+for (let color of colors ){
+    console.log(color)
+}
+
+
+// warning  : not abject
+// for (let key of person){
+//     console.log(key)
+// }
