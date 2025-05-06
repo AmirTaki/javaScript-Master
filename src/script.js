@@ -1,24 +1,11 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = " Constructor Property";
+document.getElementById("text").innerHTML = "- Functions are objects";
 
 
 
-// Construcotr Litral
-// - Constructor Property
+// - Functions are objects
 
-// Factory Function 
-
-function createCircle (radius){
-    return {
-        radius, 
-        draw() {console.log("Factory Function")}
-    }
-}
-
-const circle = createCircle(1);
-
-// Constaructor Fucntion
-function Circle (radius){
+function Circle (radius, ){
     this.radius = radius;
     this.draw = function(){
         console.log("Constractor function")
@@ -27,30 +14,27 @@ function Circle (radius){
 
 const another = new Circle(2);
 
-console.log(circle.constructor)
-console.log(another.constructor)
+console.log(Circle)
+console.log(Circle.name)
+console.log(Circle.length)  // property
+console.log(Circle.constructor) // function ->
 
-//  وقتی برای ساختن آبجکت از کانسترکتور خودمان بسازیم اگر نسازیم خود جاوااسکریپت داخل خودش از کانسکتراکتور درونی خودش استفاده مبکند.
+// function = new function ('parametr' , 'cood function') 
+const circle1 = new Function('radius',`
+    this.radius = radius;
+    this.draw = function(){
+    console.log("Constractor function")
+    }
+ `
+) 
 
-let x = {};
-console.log(x.constructor)
-
-
-// let x = new Object() ;
-
-
-// new String(); => new String ("javaScript")
-
-let name = "JavaScript";
-console.log(name.constructor)
-
-// new Boolean(); => new Boolean (true)
-let bool = true;
-console.log(bool.constructor)
-
-// new number(); => new number (1)
-let number = 1;
-console.log(number.constructor)
+const circle = new circle1(5);
+console.log(circle)
 
 
-// هر آبجکت  یک پراپرتی کانستراکتور دارد که به فانکشنی اشاره میکند که اون آبجکت به وجود آورده است
+// Circle.call({}, property)
+Circle.call({}, 1)  //  == const another = new Circle(2);
+
+
+// Circle.apply({}, [property])
+Circle.apply({}, [1]) // == const another = new Circle(2);
