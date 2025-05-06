@@ -1,48 +1,29 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = "  - Logical operators";
+document.getElementById("text").innerHTML = "  -Logical operators on non-Booleans";
 
 
-// -  Logical operators
+//-Logical operators on non-Booleans"
 
-// Logical AND
-// && 
+// false => false, undifind,, null, 0 , "", NaN
 
-console.log(true && true)  // (opreate && operate) // true && true => true
+// ture => true, 0, -1, 1, "string", ......
 
-console.log(true && false)  // (opreate && operate) // true && false => false
+console.log(false || true)
 
-console.log(true && false && true)  // (opreate && operate && operate) // true && false && true => false
+console.log(false || "test")
 
-let ProductCount = 3;
-let ProductPrice = 1000;
-let Creadit = 1200;;
+console.log(false || 0 || true)
 
-let buy = ProductCount > 0  && Creadit > ProductPrice 
-console.log(buy)
-
-// Logical OR
-// ||
-console.log("Logical OR")
-
-console.log(true || true)  // (opreate || operate) // true && true => true
-
-console.log(true || false)  // (opreate || operate) // true && false => true
+console.log(false || 1 || false) // => (false || true || false) => true
 
 
+console.log(false && true)
 
-ProductCount = 0;
-ProductPrice = 1000;
-Creadit = 1200;;
+console.log(false && "test")
 
-buy = ProductCount > 0  || Creadit > ProductPrice // false || true => true
-console.log(buy)
+console.log(true && 0 && "test") // => (ture && false && true) => false:0
 
-// Logical NOT
-// !
-console.log("Lodical NOT")
-
-
-let Check = true;
-console.log(Check)
-console.log(!Check)
-
+console.log(true && 1 && "7" || false && "test")
+// true && true &&  true => True(7)
+// false && true(7) => false
+// true(7) || false => True(7)
