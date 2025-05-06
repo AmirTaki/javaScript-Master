@@ -1,20 +1,41 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = " - break and continue";
-// break & continue
+document.getElementById("text").innerHTML = " Objects";
+
+// Objects
 
 
-// break
-let i = 0; 
-while (i < 100){
-    console.log(i++)
-    if (i == 50) break;
-}
-console.log("---------------------------------")
+// let radius = 1;
+// let x = 1;
+// let y = 1;
 
-// continue
-let j = 0; 
-while (j < 100){
-    console.log(j++)
-    if (j == 50) continue;
-}
+
+// function draw (){
+
+// }
+
+
+// Object oriented programming
+let cirle = {
+    radius : 1, 
+    location : {
+        x : 1, 
+        y : 1
+    },
+    isVisible : true,
+    draw : function(){console.log('draw')} // method
+};
+
+
+cirle.draw();
+
+
+
+//      let objectName = {
+//          key : value property,
+//          objectName : {
+//              key : value
+//           },
+//           method :fucntion () {} 
+// }
+
 
