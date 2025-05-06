@@ -1,33 +1,26 @@
 console.log('javaScript Master');
-// Primary types (Primitives)
 
 
-//1- primitve (vlaue) types
+// زبان برنامه نویسی دو دسته هستند داینامیک یا استاتیک
 
-// string
-// number
-// boolean
-// undefined
-// null
-// 2- reference types
+// در زبان های استاتیک وقتی نوع اولیه متغییر مشخص شد نوع آن قابل تغییر نیست
 
 let name = "amir"
-let age = 28;
-let admin = true;
-let lastName ;
-let tall = null;
 
-console.log(typeof(name))  // string
-console.log(typeof(age))   // number
-console.log(typeof(admin)) // boolean
-console.log(typeof(lastName))       // undefined
-console.log(typeof(tall))           // null
+console.log(name, typeof(name))
 
-tall = "amir"
-console.log(tall, typeof(tall)) 
+name = 120;
+console.log(name , typeof(name))
 
-tall = 170;
-console.log(tall, typeof(tall))
+name = false;
+console.log(name, typeof(name))
+
+name = undefined ;
+console.log(name, typeof(name))
+
+name = null;
+console.log(name, typeof(name))
 
 
-document.getElementById("text").innerHTML = " primitve (vlaue) types";
+
+document.getElementById("text").innerHTML = " JavaScript is dynamic";
