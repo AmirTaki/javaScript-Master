@@ -1,41 +1,12 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = " factory function";
-
-// factory function
+document.getElementById("text").innerHTML = " constructor function";
 
 
-let cirle = {
-    radius : 2,
-    location : {
-        x : 2, 
-        y : 2,
-    },
-    isVisibble : true,
-    draw : function() {console.log("draw")}
-}
-
-// Factory function
-function createCircle (randius, location, check ){
-    return {
-        
-            radius : randius,
-            location : location,
-            isVisibble : check,
-            draw : function() {console.log("draw")}
-        
-    }
-}
-
-let obj = createCircle(1, {x : 1, y : 3}, true);
-console.log(obj)
-console.log(obj.draw())
 
 
-// syntax new
-// اکر نوشتاری کلید و مقدار یکی باشد مینوانیم یک بار بنویسیم
-//  همچنین برای متد هم میتوان از نوشتن کلمه فانکشن خودداری کرد
+// Factory Function
 
-function createCircle2 (radius, location, isVisibble){
+function createCircle (radius, location, isVisibble){
     return {
         radius, 
         location, 
@@ -44,11 +15,47 @@ function createCircle2 (radius, location, isVisibble){
     }
 }
 
+const myCircle = createCircle(1, {x : 12, y : 13}, true)
 
-let objectCircle  = createCircle2(1, {x : 12, y :15}, false)
-console.log(objectCircle)
-console.log(objectCircle.draw())
+// constructor function
 
-let objectCircle2 = createCircle2(2, {x : 15 ,y: 20},true)
-console.log(objectCircle2)
-console.log(objectCircle2.draw())
+function Circle(radius, location, isVisibble){
+    this.radius  = radius,
+    this.location = location,
+    this.isVisibble = isVisibble;
+    this.draw = function(){
+        console.log ("draw")
+    }
+    //return this;  // نیازی نیست اینو بنوسیبم توسط اپریتور نیو انجام میشود
+}
+
+const circle = new Circle(3, {x : 4,  y: 2 }, false)  ;
+
+console.log(circle)
+
+
+
+
+// اپریتور new :
+// یک آبجکت خالی ایجاد میکند
+
+// اپریتور یا کلمه this
+// به آبجکت خالی اشاره میکند
+
+// آبجکت مقدار دهی شده برمیگرداند
+
+
+// camel notation : oneTwoThree
+// pascal notaion : OneTwoThree
+
+
+//  تفاوت بین factory function & constarctor function
+// در فکتوری فانکشن ما یک متغیر میساختیم واسم آبجکت میدادیم و  اتفاقی که می افتد آبجکت برای ما بر میگرداند
+
+// اما در conastractor function
+// اپریتور نیو میساختیم ویک آبجکت میسازیم و چیزی درون آبجکت
+// return
+// نمیکنیم
+// و از کلمه کلیدی
+// this
+// استفاده میکنیم
