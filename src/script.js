@@ -1,28 +1,35 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = "Getters and Setters"
+document.getElementById("text").innerHTML = " Operator Rest"
 
-// - Getters and Setters
+// - Operator Rest
 
-const person = {    
-    fname : "amir", 
-    lname : 'taki',
-    get fullName(){ 
-        return `${person.fname} : ${person.lname}`
-    },
-    set fullName(value){
-        const parts = value.split(" ");
-        this.fname = parts[0]
-        this.lname = parts[1]
+function sum () {
+    let total = 0;
+    for (let number of arguments){
+        total += number;
     }
-};
+    return total
+}
 
-// console.log(person.fullName())
-
-
-// getters => access properties
-console.log(person.fullName)
+console.log(sum(1, 2, 3, 4, 5, 6))
 
 
-// setters => change (mutate)
-person.fullName = "mani javid"
-console.log(person.fullName)
+// Operator Rest ... 
+
+
+function Operator (...args) {
+   return args.reduce((a, b)=> a + b) 
+}
+
+console.log(Operator(1, 2, 3, 4, 5, 6))
+
+
+// قبل 
+// rest
+// میتوان پارامتر داشته باشیم اما بعد آن  نمیتوان
+function OperatorTwo (discount, ...args) {
+   const total =  args.reduce((a, b)=> a + b) 
+   return total * (1 - discount)
+}
+
+console.log(OperatorTwo(0.5 ,1, 2, 3, 4, 5, 17))
