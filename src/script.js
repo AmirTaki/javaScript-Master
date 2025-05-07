@@ -1,34 +1,48 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = "-Object-oriented programming concepts"
+document.getElementById("text").innerHTML = "-Abstraction- oop"
 
-// object-oriented programming
-/*
-یک الگوی برنامه نویسی است که  به جای فانکشن ها  حول آبجکت ها  میچرخد
-*/
+// Abstraction object-oriented programming
 
-// مجموعه ای از متغییر ها و فانکشن ها ی به هم مرتبط در یک گروه یا آبجکت قرار میدهیم
+function Circle (radius){
 
+    this.radius = radius;
 
-// practical programming
+    let defaultLocation = {x : 0, y : 0};
 
-let baseSalary  = 30000;
-let overtime = 10;
-let rate = 20;
-
-function getWage(baseSalary, overtime, rate)
-{
-    return baseSalary + (overtime * rate)
-}
-
-// encapsulation programming
-
-let employee = {
-    baseSalary : 3000,
-    overtime : 10,
-    rate : 20,
-    gatwage(){
-        return this.baseSalary + (this.overtime * this.rate)
+    let computerOptimumLocation = function (factor) {
+        // ....
+    }
+    this.draw = function () {
+        computerOptimumLocation();
+        console.log('draw')
     }
 }
 
-// abstraction programming
+const circle = new Circle(10)
+
+console.log(circle.draw())
+
+/*
+
+function Circle (radius){
+
+    this.radius = radius;
+
+    this.defaultLocation = {x : 0, y : 0};
+
+    this.computerOptimumLocation = function (factor) {
+        // ....
+    }
+    this.draw = function () {
+        this.computerOptimumLocation();
+        console.log('draw')
+    }
+}
+
+
+
+const circle = new Circle(10)
+
+circle.computerOptimumLocation()
+
+*/
