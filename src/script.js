@@ -1,55 +1,81 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = " -Try and Catch"
+document.getElementById("text").innerHTML = " -- to change this"
 
 
-// try & catch
+//To Change THIS
 
-const person = {
-    fname:'amir',
-    lname : 'taki',
-    get fullName(){return `${person.fname} : ${person.lname}`},
-    set fullName(value){
-        if(typeof value !== 'string')return;
-        
-            const parts = value.split(' ')
-            this.fname =  parts[0]
-            this.lname =  parts[1]
-     
+/* 
+method -> obj
+function -> global(window, global)
+*/
+
+const video = {
+    title : 'a',
+    tags : ['a', 'b', 'c'],
+    showTags() {
+        this.tags.forEach((element) => {
+            console.log(this.title, element)
+        });
     }
 }
 
-console.log(person.fullName)
-person.fullName = true
+video.showTags()
 
-console.log(person.fullName)
+console.log("-----------------")
 
-console.log(person)
-// Try Catch
-
-
-const personal = {
-    fname:'amir',
-    lname : 'taki',
-    get fullName(){return `${person.fname} : ${person.lname}`},
-    set fullName(value){
-    
-        const parts = value.split(' ')
-        if(typeof value !== 'string') throw new Error("value is not a string ");
-    
-        if (parts.length !== 2) throw new Error("Enter a first an last name");
-        
-            this.fname =  parts[0]
-            this.lname =  parts[1]
-        
+const videoSelf = {
+    title : 'a',
+    tags : ['a', 'b', 'c'],
+    showTags() {
+        const self = this
+        this.tags.forEach(function(element){
+            console.log(self.title, element)
+        })
     }
 }
-try{
-    // personal.fullName = false;
-    personal.fullName = "amir"
+
+videoSelf.showTags()
+
+
+console.log("-----------------")
+
+//فانکشن ها در اصل آبجکت هستندوآبجکت ها یه سری پراپتی دارد و یک سری متد
+
+function playVideo() {
+    console.log(this)
 }
-catch(e){
-    alert(e)
-    console.log(e)
-}  
+// playVideo()
+
+playVideo.call({name : 'amir'})
+
+playVideo.apply({name : 'mani'})
+
+/*
+ یک فانکشن جدید برمیگرداند و 
+this 
+در فانکشن جدید به صورت داعمی به آبجکت که به عنوان ورودی به ان شاره کند
+*/
+
+const fn = playVideo.bind({name : "samin"})
+
+console.log(fn())
+fn()
 
 
+console.log('-------------')
+
+
+// arrow function
+// this
+// از بلاکی در بوده به ارث میرد
+
+const videos = {
+    title : 'a',
+    tags : ['a', 'b', 'c'],
+    showTags() {
+        this.tags.forEach((element) => {
+            console.log(this.title, element)
+        });
+    }
+}
+videos.showTags()
