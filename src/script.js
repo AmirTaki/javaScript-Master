@@ -1,47 +1,98 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = "- - Array map in JavaScript"
+document.getElementById("text").innerHTML = "- - - What 'this' does"
 
-// - Array mapping
+// - this
 
-const numbers = [1, 10, 12, 4, -8, -9, -18, 22, 39]
+// function in object => method
+// method in object => this
+
+// functiion normall => this : global object
+// global object in browser ---> window
+// global object in node  -----> global
 
 
-const list = []
-for (let i = 0 ; i < numbers.length; i++){
-    list.push( numbers[i] * 2)
+// this in function -> global (browser : windonw, node : global)
+
+//-----------------------------------   -------------------------------
+
+// OBJECT
+const video = {
+    title : "a",
+    play() {
+        console.log(this)
+    },
+    stop() {
+        console.log(this)
+    }
 }
 
-console.log(numbers)
+video.play()
 
-console.log('--------------')
+// this
+//   درون یک متد هست و آبجکت ما درون فانکشن است بنابراین 
+// this
+// به آبجکتی که آن متد در آن قرار دارد اشاره میکند
 
-const result = numbers.map(value => value * 10)
-console.log(result)
+video.stop()
 
-console.log('--------------')
+//-----------------------------------   -------------------------------
+// FUNCTION
 
-const products = ["html", 'css', 'js']
+function playVideo() {
+    console.log(this);
+}
 
-const items = products.map(product => {
-    return `<li> ${product} </li>`
-})
-console.log(items)
+playVideo() // window
+// یک فانکشن است باید کلوبال برای ما نمایش دهد
 
-console.log('--------------')
-const html = `<ul> ${items.join('')} </ul>`
-console.log(html)
+//-----------------------------------   -------------------------------
+// CONSTRANCTOR FUNCTION
 
-document.getElementById("view").innerHTML = html;
+function Videos (title) {
+    this.title = title;
+    console.log(this)
 
-console.log('--------------')
-const objects = products.map( prodect => ({value : prodect}) ) ;
-console.log(objects)
+    // return this
+}
 
-console.log('--------------')
+const V = new Videos('practice')
 
-const tall = [170, 190, 172, 180, 167, 159, 182, 178]
+// ویندو برای ما لاگ نمیگیرد چرا ؟
+
+// وقتی از کلمه
+// new 
+// استفاده میکنیم 3 کار انجام میدهد
+// 1)
+// ابتدا یک آبجکت خالی جدید میسازد
+// 2)
+//this
+// به آبجکت خالی جدید اشاره مبکند
+// 3)
+// در نهایت کلمه 
+//  this 
+// برای ما بر میگرداند
+
+//-----------------------------------   -------------------------------
+
+const film = {
+    title: 'film:',
+    tags : ['a', 'b', 'c'],
+    showTags(){
+        this.tags.forEach(e => {
+            console.log(this.title, e)
+        })
+    },
+    
+    showTagsF(){
+        this.tags.forEach(function(e)  {
+            console.log(this.title, e)
+        },this)
+    }
+}
 
 
-const views = tall.filter(tall => tall >= 170).map(tall => ({man : tall}))
+film.showTags()
+console.log("----------------")
+film.showTagsF()
 
-console.log(views)
+console.log('a', 'b')
