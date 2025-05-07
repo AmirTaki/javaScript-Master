@@ -1,35 +1,71 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = " Operator Rest"
+document.getElementById("text").innerHTML = " - scoops"
 
-// - Operator Rest
+// - - Scoops
 
-function sum () {
-    let total = 0;
-    for (let number of arguments){
-        total += number;
+{
+    const message = "scope"
+    let messageLet = "let "
+}
+
+// console.log(message)   //warning
+//  console.log(messageLet) //warning
+
+//اسکوپ یک متغیر یا یک ثابت مشخص میکند که کجا در دسترس باشد
+
+
+function start(){
+    const message = "scope function"
+    if (true){
+        const anoter = "hi"
     }
-    return total
+    // console.log(anoter) // warning 
+    for (let i = 0 ; i < 5; i++){
+        console.log(i)
+    }
+    // console.log(i)  // warning
+
+}
+// console.log(message)// warning
+start()
+
+
+const color = 'red'
+
+
+function stop() {
+    const anoter = "hello World!"
+    //  console.log(color)
+    const color = 'blue'
+    console.log(color)
 }
 
-console.log(sum(1, 2, 3, 4, 5, 6))
+stop()
+console.log(color)
 
+/*
+local
+به
+global 
+الویت دارد
 
-// Operator Rest ... 
-
-
-function Operator (...args) {
-   return args.reduce((a, b)=> a + b) 
+local 
+{
+    global
 }
 
-console.log(Operator(1, 2, 3, 4, 5, 6))
+*/
 
 
-// قبل 
-// rest
-// میتوان پارامتر داشته باشیم اما بعد آن  نمیتوان
-function OperatorTwo (discount, ...args) {
-   const total =  args.reduce((a, b)=> a + b) 
-   return total * (1 - discount)
+function shop (){
+    let age = 18
+    
+    if (true){
+        console.log(age)
+        age = 20  //
+        console.log(age)
+    }
+    console.log(age)
 }
 
-console.log(OperatorTwo(0.5 ,1, 2, 3, 4, 5, 17))
+shop()
