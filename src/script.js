@@ -1,53 +1,57 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = " -- Delete all array elementsy";
+document.getElementById("text").innerHTML = " - Array concatenation and slicing";
 
-// - Delete all array elements
+// -- Array concatenation and slicing
 
-// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] warning
+const first = [1, 2, 3, 4, 5]
+const second = [6, 7, 8, 9, 10]
 
+const combined = first.concat(second)
 
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+console.log(`combined : ${combined}`)
 
-let another = numbers;
+// silice
 
-console.log(`numbers : ${numbers}`)
+const slice = combined.slice(2, 5)
 
-console.log(`another : ${another}`)
+console.log(`slice : ${slice}`)
 
-console.log("------ [] ----------")
+console.log(`slice : ${combined.slice(2)}`)
 
-numbers = []
-
-console.log(`numbers : ${numbers}`)
-
-console.log(`another : ${another}`)
-
-// length
-
-console.log("------ length ----------")
-
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-another = numbers;
-
-numbers.length = 0
+console.log(`slice : ${combined.slice()}`)
 
 
-console.log(`numbers : ${numbers}`)
+// نکته :درباره اسلایس و کامبکت 
+// اگر عناصر ارایه پرمتیو باشند به وسیله ی مقدار ان کپی میشوند 
+//  ولی اکر عناصر آبجکت باشند خود عناصر کپی نمی شوند بلمع رفرنس آن کپی میشود
 
-console.log(`another : ${another}`)
+// Example 
 
-// splice 
+const ListNumbers = [1, 2, 3, 4, 5]
+console.log(`LintNumbers : ${ListNumbers}` )
 
-console.log("------ splice ----------")
+const sliceNumbers = ListNumbers.slice();
+console.log(`sliceNumbers : ${sliceNumbers}` )
 
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ListNumbers.pop()
+console.log(`LintNumbers : ${ListNumbers}` )
+console.log(`sliceNumbers : ${sliceNumbers}` )
 
-another = numbers;
 
-numbers.splice(0 , numbers.length)
+console.log("--------------------------------")
 
-console.log(`numbers : ${numbers}`)
+const listNumbers = [{id : 1, value : "name"}]
 
-console.log(`another : ${another}`)
+const comb = listNumbers.concat(second)
+
+
+for (let i in listNumbers )console.log(listNumbers[i])
+
+console.log(comb)
+
+listNumbers[0].value  = "new name"
+
+for (let i in listNumbers )console.log(listNumbers[i])
+
+console.log(comb)
 
