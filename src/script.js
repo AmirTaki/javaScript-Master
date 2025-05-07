@@ -1,57 +1,39 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = " - Array concatenation and slicing";
+document.getElementById("text").innerHTML = " - - Spread operator in votes";
 
-// -- Array concatenation and slicing
+// -- - Spread operator in votes
 
-const first = [1, 2, 3, 4, 5]
-const second = [6, 7, 8, 9, 10]
+// primative
+const first = [1, 2, 3, 4]
+const second = [5, 6, 7, 8]
 
-const combined = first.concat(second)
+const combied = ['a',...first,'b', ...second,'c']
 
-console.log(`combined : ${combined}`)
+console.log(`combied : ${combied}`)
 
-// silice
-
-const slice = combined.slice(2, 5)
+const slice = [...combied]
 
 console.log(`slice : ${slice}`)
 
-console.log(`slice : ${combined.slice(2)}`)
-
-console.log(`slice : ${combined.slice()}`)
+console.log(first.pop())
 
 
-// نکته :درباره اسلایس و کامبکت 
-// اگر عناصر ارایه پرمتیو باشند به وسیله ی مقدار ان کپی میشوند 
-//  ولی اکر عناصر آبجکت باشند خود عناصر کپی نمی شوند بلمع رفرنس آن کپی میشود
+console.log(`combied : ${combied}`)
 
-// Example 
-
-const ListNumbers = [1, 2, 3, 4, 5]
-console.log(`LintNumbers : ${ListNumbers}` )
-
-const sliceNumbers = ListNumbers.slice();
-console.log(`sliceNumbers : ${sliceNumbers}` )
-
-ListNumbers.pop()
-console.log(`LintNumbers : ${ListNumbers}` )
-console.log(`sliceNumbers : ${sliceNumbers}` )
+console.log(`slice : ${slice}`)
 
 
-console.log("--------------------------------")
+/// refrence
 
-const listNumbers = [{id : 1, value : "name"}]
+const one = [{id : 1}]
+const comb = [...one, ...second]
 
-const comb = listNumbers.concat(second)
+
+for (let i in comb) console.log(comb[i])
 
 
-for (let i in listNumbers )console.log(listNumbers[i])
+one[0].id = 30
 
-console.log(comb)
+for (let i in comb) console.log(comb[i])
 
-listNumbers[0].value  = "new name"
-
-for (let i in listNumbers )console.log(listNumbers[i])
-
-console.log(comb)
-
+console.log(one[0].id)
