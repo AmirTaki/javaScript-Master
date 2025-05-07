@@ -1,71 +1,55 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = " - scoops"
+document.getElementById("text").innerHTML = " - - Variable definition with VAR"
 
-// - - Scoops
+// - - VAR
+var y = 0;
 
-{
-    const message = "scope"
-    let messageLet = "let "
-}
-
-// console.log(message)   //warning
-//  console.log(messageLet) //warning
-
-//اسکوپ یک متغیر یا یک ثابت مشخص میکند که کجا در دسترس باشد
-
+console.log(y)
 
 function start(){
-    const message = "scope function"
-    if (true){
-        const anoter = "hi"
-    }
-    // console.log(anoter) // warning 
-    for (let i = 0 ; i < 5; i++){
+    for(let i = 0; i < 5; i++){
         console.log(i)
     }
-    // console.log(i)  // warning
-
+    // console.log(i) warning
 }
-// console.log(message)// warning
 start()
 
+function stop(){
+    for (var i = 5 ; i > 0 ; i--){
+        console.log(i)
+    }
 
-const color = 'red'
-
-
-function stop() {
-    const anoter = "hello World!"
-    //  console.log(color)
-    const color = 'blue'
-    console.log(color)
+    console.log(i)
 }
-
 stop()
-console.log(color)
+
+// console.log(i) // warning
 
 /*
-local
-به
-global 
-الویت دارد
+وقتی متغیر با کلید واژه 
+var 
+استفاده میکنیم اسکوپ آن به بلاکی در آن تعریف شده محدود نمیشود
 
-local 
-{
-    global
-}
+بلکه به فانکشنی که در آن تعریف شده محدود میشود
 
 */
 
 
-function shop (){
-    let age = 18
-    
-    if (true){
-        console.log(age)
-        age = 20  //
-        console.log(age)
-    }
-    console.log(age)
-}
+/*
+var => function-scoped
+let, const => block-scoped
+*/
 
-shop()
+
+var color = 'red'   // global
+let age = 20;       // global
+
+console.log(window.color)
+console.log(window.age)  // undifined
+
+
+
+function sayHi(){
+    console.log("hi")
+}
+console.log(window.sayHi)
