@@ -1,39 +1,44 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = " - - Spread operator in votes";
+document.getElementById("text").innerHTML = " - Array traversal";
 
-// -- - Spread operator in votes
+// -- -- Array traversal
 
-// primative
-const first = [1, 2, 3, 4]
-const second = [5, 6, 7, 8]
+const numbers = [1, 2, 3, 4, 5, 6]
 
-const combied = ['a',...first,'b', ...second,'c']
-
-console.log(`combied : ${combied}`)
-
-const slice = [...combied]
-
-console.log(`slice : ${slice}`)
-
-console.log(first.pop())
+for (let number of numbers){
+    console.log(number)
+}
 
 
-console.log(`combied : ${combied}`)
+console.log("------------")
 
-console.log(`slice : ${slice}`)
+numbers.forEach(number => {
+    console.log(number) 
+});
+
+console.log("------------")
+
+numbers.forEach((number,i) => {
+    console.log(`${i} : ${number}`) 
+});
 
 
-/// refrence
+console.log("------------")
 
-const one = [{id : 1}]
-const comb = [...one, ...second]
+const arrayObj = [{id : 1, value : "value"}, 2 , 3, 4, 5, 6]
+
+for (let number of arrayObj){
+    console.log(number)
+}
 
 
-for (let i in comb) console.log(comb[i])
+console.log("------------")
 
 
-one[0].id = 30
+arrayObj.forEach(element => {
+    console.log(element)
+});
 
-for (let i in comb) console.log(comb[i])
 
-console.log(one[0].id)
+console.log("------------")
+
