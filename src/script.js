@@ -1,41 +1,22 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = "-Hosting in JS"
+document.getElementById("text").innerHTML = "-Arguments in JS"
 
-// - Hosting
+// - Arguments
 
-
-// FUNCTION Declaration
-walk()
-function walk () {
-        console.log("walk")        
+function sum(a, b){
+    // console.log(arguments)
+    let total = 0;
+    for (let value of arguments){
+        total += value;
     }
+    return total
+}
+
+console.log(sum(1, 3))
+console.log(sum())
+console.log(sum(1, ))
+console.log(sum(1, 2, 3, 4 ))
 
 
-// FUNCTION  Expression
+// اگرایتریتور نداشته باشد نمینوان استفاده کرد
 
-// run ()
-//  Error : Warning Uncaught ReferenceError ReferenceError: Cannot access 'run' before initialization
-
-let run = function () {
-    console.log("run")
-};
-walk()
-run()
-
-
-// تفاوت کلیدی 
-// FUNCTION Declaration در
-// میتوان قبل از تعریف شدن آن آن را صدا زد
-//امابا  FUNCTION  Expression
-// نمیتوان آن را صدا زد
-
-
-// دلیل اجرا این است موتور جاوااسکریپت قبل از اجرا 
-// function declaration
-// به بالا تر از بقیه اجرا میکند
-// و به این عملکرد 
-//  hoistiog
-// میگویند
-
-let move = run;
-move();
