@@ -1,19 +1,53 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = " - Remove element from array";
+document.getElementById("text").innerHTML = " -- Delete all array elementsy";
 
-// - Remove element from array
+// - Delete all array elements
 
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] warning
 
-const last = numbers.pop();
 
-console.log(last) 
-console.log(numbers) 
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-const first = numbers.shift();
-console.log(first)
-console.log(numbers)
+let another = numbers;
 
-const result = numbers.splice(3, 2);
-console.log(result)
-console.log(numbers)
+console.log(`numbers : ${numbers}`)
+
+console.log(`another : ${another}`)
+
+console.log("------ [] ----------")
+
+numbers = []
+
+console.log(`numbers : ${numbers}`)
+
+console.log(`another : ${another}`)
+
+// length
+
+console.log("------ length ----------")
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+another = numbers;
+
+numbers.length = 0
+
+
+console.log(`numbers : ${numbers}`)
+
+console.log(`another : ${another}`)
+
+// splice 
+
+console.log("------ splice ----------")
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+another = numbers;
+
+numbers.splice(0 , numbers.length)
+
+console.log(`numbers : ${numbers}`)
+
+console.log(`another : ${another}`)
+
