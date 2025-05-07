@@ -1,25 +1,47 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = "- Filtering an array"
+document.getElementById("text").innerHTML = "- - Array map in JavaScript"
 
-// - Filtering an array
+// - Array mapping
 
 const numbers = [1, 10, 12, 4, -8, -9, -18, 22, 39]
 
 
-const array = numbers.filter((value)=>{
-    return value >= 0
-})
+const list = []
+for (let i = 0 ; i < numbers.length; i++){
+    list.push( numbers[i] * 2)
+}
 
-console.log(array)
+console.log(numbers)
 
+console.log('--------------')
 
-const users = [
-    {name : "amir", age : 28},
-    {name : "mani", age : 20},
-    {name : "nia", age :  25 },
-    {name : "kia", age : 14},
-    {name : "reza", age : 16},
-]
-const result =  users.filter(user => user.age >= 18) 
-
+const result = numbers.map(value => value * 10)
 console.log(result)
+
+console.log('--------------')
+
+const products = ["html", 'css', 'js']
+
+const items = products.map(product => {
+    return `<li> ${product} </li>`
+})
+console.log(items)
+
+console.log('--------------')
+const html = `<ul> ${items.join('')} </ul>`
+console.log(html)
+
+document.getElementById("view").innerHTML = html;
+
+console.log('--------------')
+const objects = products.map( prodect => ({value : prodect}) ) ;
+console.log(objects)
+
+console.log('--------------')
+
+const tall = [170, 190, 172, 180, 167, 159, 182, 178]
+
+
+const views = tall.filter(tall => tall >= 170).map(tall => ({man : tall}))
+
+console.log(views)
