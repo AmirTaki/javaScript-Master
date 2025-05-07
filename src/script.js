@@ -1,13 +1,28 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = "Parameter initialization"
+document.getElementById("text").innerHTML = "Getters and Setters"
 
-// - Parameter initialization
+// - Getters and Setters
 
-function interest (prinicpal  , rate = 3.5 , years = 5   ){
-    // rate = rate || 3.5
-    return ((prinicpal * rate) / 100) * years 
-}
+const person = {    
+    fname : "amir", 
+    lname : 'taki',
+    get fullName(){ 
+        return `${person.fname} : ${person.lname}`
+    },
+    set fullName(value){
+        const parts = value.split(" ");
+        this.fname = parts[0]
+        this.lname = parts[1]
+    }
+};
 
-console.log(interest(100000, 3.5, 1 ))
-console.log(interest(100000,  ))
-console.log(interest(100000, undefined, 1 ))
+// console.log(person.fullName())
+
+
+// getters => access properties
+console.log(person.fullName)
+
+
+// setters => change (mutate)
+person.fullName = "mani javid"
+console.log(person.fullName)
