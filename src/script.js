@@ -1,44 +1,28 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = " - Array traversal";
+document.getElementById("text").innerHTML = "- Array join";
 
-// -- -- Array traversal
+/// - Array join
 
-const numbers = [1, 2, 3, 4, 5, 6]
+const numbers = [1, 2, 3, 4, 5, 6, 7] 
 
-for (let number of numbers){
-    console.log(number)
-}
+const joined = numbers.join();
 
+console.log(joined)
 
-console.log("------------")
+const joinedNew = numbers.join('-')
 
-numbers.forEach(number => {
-    console.log(number) 
-});
+console.log(joinedNew)
 
-console.log("------------")
-
-numbers.forEach((number,i) => {
-    console.log(`${i} : ${number}`) 
-});
+console.log(typeof(joinedNew))
 
 
-console.log("------------")
+const message = "Array Join in JavaScript";
 
-const arrayObj = [{id : 1, value : "value"}, 2 , 3, 4, 5, 6]
+const parts = message.split(" ")
+console.log(parts)
 
-for (let number of arrayObj){
-    console.log(number)
-}
+const combiend = parts.join('-')
 
+console.log(combiend)
 
-console.log("------------")
-
-
-arrayObj.forEach(element => {
-    console.log(element)
-});
-
-
-console.log("------------")
 
