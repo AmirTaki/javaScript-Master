@@ -1,74 +1,82 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML = "- Prototype Inheritance- oop"
+document.getElementById("text").innerHTML = "-Multilevel inheritance oop"
 
-//  Prototype Inheritance object-oriented programming
-/*
-نکته هر آبجکتی در جاوا اسکریپت یک 
-Prototype 
-پدر دارد 
-و تمام متد و پراپرتی های ان را به ارث میبرد
-به جز یک مورد
-__proto__
+//  Multilevel inheritance object-oriented programming
+let myArray = []
+console.log([])
 
-*/
+function Circle(radius){
+    this.radius = radius,
+    this.draw =()=> {
+        console.log('draw')
+    }
+}
 
-let x = {}
-console.log(x)
-console.log(x.toString())
+const circle = new Circle(10)
 
-let y = {}
-console.log(y)
+console.log(circle)
 
-Object.getPrototypeOf(y)
-Object.getPrototypeOf(x)
 
-console.log(Object.getPrototypeOf(x))
+const circle2 = new Circle(12)
 
-Object.getPrototypeOf(x) === Object.getPrototypeOf(y)
 
-x.__proto__ === y.__proto__
+console.log(circle2)
 
 
 /*
-تمام آبجکت ها در جاوا اسکریپت مستقیما یا غیر مستقیم از 
-__proto__
-پروتایپ ارث ببری میکند
-__proto__ =
-null
-__defineGetter__ =
-ƒ __defineGetter__()
-__defineSetter__ =
-ƒ __defineSetter__()
-__lookupGetter__ =
-ƒ __lookupGetter__()
-__lookupSetter__ =
-ƒ __lookupSetter__()
+آبجکت پرتوتایپ ویژه همه ابجکت هایی که به وسیله ی این 
+canstarctor Function circle
+ایجادشدند
+
+اسم این بخش بگذاریم  سرکل بیس :Circle base
+
+
+Circle {radius: 10, draw: ƒ}
+script.js:17
+draw =
+()=> {\r\n        console.log('draw')\r\n    }
+radius =
+10
+[[Prototype]] =
+Object
 constructor =
-ƒ Object()
-hasOwnProperty =
-ƒ hasOwnProperty()
-isPrototypeOf =
-ƒ isPrototypeOf()
-propertyIsEnumerable =
-ƒ propertyIsEnumerable()
-toLocaleString =
-ƒ toLocaleString()
-toString =
-ƒ toString()
-valueOf =
-ƒ valueOf()
+ƒ Circle(radius){\r\n    this.radius = radius,\r\n    this.draw =()=> {\r\n        console.log('draw')\r\n    }\r\n}
+arguments =
+null
+caller =
+null
+length =
+1
+name =
+'Circle'
+prototype =
+{}
+[[FunctionLocation]] =
+@ c:\Users\ASUS\Desktop\backup _ toturial\Js-master\src\script.js:8
+[[Prototype]] =
+ƒ ()
+[[Scopes]] =
+Scopes[2]
+[[Prototype]] =
+Object
+  
 */
 
-
-/* 
-به نوعی ابجکت بیس یا پروتاپ  پدر ههه ابجکت ها در جاوا اسکریپت است
-*/
 /*
-ابجکت بیس یا پروتایپ هیچ پدری ندارد
+یعنی هر موقع که ما یک 
+constractor
+که یک ابجکت صدا میزنیم 
+ */
+
+/*  
+همه ابجکت های که کانستراکتور  یکسانی دارند 
+پرتوتایپ یکسانی دارند
 */
 
-/*
-وقتی از متد یک ابجکت استفاده میکنیم موتور جاوا اسکریپت ابتدا دننبال اون پراپرتی یا متد 
-درون ابجکت میگردد اگر پیدا نکرد به پروتو تایپ خود نگاه میکند
-*/
+let array2 = [2]
+let array3 = [2]
 
+console.log(array2)
+console.log(array3)
+
+// کانسکتور جفت آرایه یکسان است
