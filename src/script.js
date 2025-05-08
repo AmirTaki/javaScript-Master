@@ -1,36 +1,40 @@
-console.log('javaScript Master');
-document.getElementById("text").innerHTML =  " - static methods oop"
+const _radius = Symbol();
+const _draw = Symbol();
 
-// - static methods  in class object-oriented programming
-
+// - - Hide members with symbols  object-oriented programming
 
 class Circle {
     constructor(radius){
-        this.radius = radius
-    }
-    // Instance method
-    draw(){
-    }
-
-    // Static method
-    static parse(str){
-        const radius = JSON.parse(str).radius;
-        return new Circle(radius);
+        this[_radius] = radius  // property private
+    };
+    [_draw]() {                 // method private
+        
     }
 }
 
-const circle = new Circle(1)
-console.log(circle)
 
-// console.log(Circle.parse())
-// console.log(circle.parse())
+const c = new Circle(1);
+console.log(c._radius)
 
-const circleParse = Circle.parse('{"radius" : 12}')
-console.log(circleParse)
+console.log(Object.getOwnPropertyNames(c))
+
+console.log(Object.getOwnPropertySymbols(c))
 
 
-// Math.min() static method
 
+
+Circle.radius;
+// Circle.draw()
 /*
-معمولا از استاتیک متد برای ساخت یوتیلیتی استفاده میشود 
+const key = Object.getOwnPropertySymbols(c)[0]
+console.log(c[key])
+console.log(c[Object.getOwnPropertySymbols(c)[0]])
 */
+
+
+
+
+
+
+
+document.getElementById("text").innerHTML =  " -- Hide members with symbols oop"
