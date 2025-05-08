@@ -1,10 +1,11 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML =  " Reset Constructor oop"
+document.getElementById("text").innerHTML =  " - Calling the parent constructor oop"
 
-//  Reset Constructore Prototypobject-oriented programming
+// - Calling the parent constructor Prototypobject-oriented programming
 
 
-function Sahpe() {
+function Sahpe(color) {
+    this.color = color
 
 }
 Sahpe.prototype.duplicate = function(){
@@ -12,36 +13,26 @@ Sahpe.prototype.duplicate = function(){
 }
 
 
-
-function Circle(radius){
-    this.radius = radius
+function Circle(radius, color){
+    // call the parent constructor  warning :// Sahpe(this.color);
+    Sahpe.call(this, color);
+    // Sahpe.apply(this, [color]);
+    this.radius = radius;
  
 };
+
+
+Circle.prototype = Object.create(Sahpe.prototype)
+Circle.prototype.constructor = Circle
+
 
 Circle.prototype.draw = function () {
     console.log('draw')
 }
 
-Circle.prototype.duplicate = function() {
-    console.log('duplicate')
-}
+const s = new Sahpe("brown")
+const c = new Circle(2, "silver")
 
+// window.color => silver
 
-const  c1 = new Circle (1)  // new Circle.prototype.constructor(1)
-
-
-Object.create(Sahpe.prototype);  
-
-
-Circle.prototype = Object.create(Sahpe.prototype)
-// ما در این کار پروتوتایپ سرکل ریست کردیم بهتر است از این دستور اجرا کنیم
-Circle.prototype.constractor = Circle
-
-const s = new Sahpe()
-const c = new Circle(1)
-
-
-
-// c.draw() warning : reset Constructor (Cricle)
-
-c.duplicate()
+console.log(c.color)
