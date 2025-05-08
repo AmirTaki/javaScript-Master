@@ -1,35 +1,42 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML =  " - Classes oop"
+document.getElementById("text").innerHTML =  " - Hosting in class oop"
 
-// - Classes object-oriented programming
-/*
-در واقع کلاس ها سینتکس راحت تر برای همان پروتوکیت اینهریتنس
-آبجکت های وراثت و ...
-*/
+// - Hosting in class object-oriented programming
 
-/*
-function Circle(radius){
-    this.radius = radius;
-    this.draw = function(){
-        console.log("draw")
-    }
+
+sayHello()
+
+// Function Declaration
+function sayHello(){
+    console.log("hello")
 }
-*/
 
+// sayGoogbye() warning
+
+// Function Expression
+const sayGoogbye = function(){
+    console.log("goodbye")
+}
+
+// const c = new Circle(); warning :
+
+// class Declaration
 class Circle {
-    constructor(radius){
-        this.radius = radius;
-        this.move = function () {
-            console.log("move")
-        }
-    }
-    draw(){
-        console.log('draw')
-    }
+
 }
 
-const c = new Circle (1)
 
-console.log(c)
+// const s = new Square() warning
 
-console.log(typeof Circle)  // در واقع کلاس ها در جاوا اسکریپت یه نوع فانکشن هستند
+// class Expression
+const Square  = class {
+
+}
+
+
+/*
+هاستینک برای کلاس ها نداریم
+برای فانکشن 
+declaration 
+داشتیم
+*/
