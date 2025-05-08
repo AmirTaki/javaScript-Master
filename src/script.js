@@ -1,40 +1,29 @@
-const _radius = Symbol();
-const _draw = Symbol();
+const _radius = new WeakMap();
+const _move = new WeakMap();
 
-// - - Hide members with symbols  object-oriented programming
-
+// - - Hide members with WeakMap  object-oriented programming
 class Circle {
     constructor(radius){
-        this[_radius] = radius  // property private
+        _radius.set(this, radius) // property private
+       
+        // method private
+        _move.set(this, ()=>{
+            console.log("move", this)
+        })
     };
-    [_draw]() {                 // method private
-        
+    draw(){
+        console.log(_radius.get(this))
+        _move.get(this)();
     }
+    
+
 }
 
+const c = new Circle(1)
+c.radius    
+c.draw()
 
-const c = new Circle(1);
-console.log(c._radius)
-
-console.log(Object.getOwnPropertyNames(c))
-
-console.log(Object.getOwnPropertySymbols(c))
+// c._move()
 
 
-
-
-Circle.radius;
-// Circle.draw()
-/*
-const key = Object.getOwnPropertySymbols(c)[0]
-console.log(c[key])
-console.log(c[Object.getOwnPropertySymbols(c)[0]])
-*/
-
-
-
-
-
-
-
-document.getElementById("text").innerHTML =  " -- Hide members with symbols oop"
+document.getElementById("text").innerHTML =  " -- Hide members with WeakMap oop"
