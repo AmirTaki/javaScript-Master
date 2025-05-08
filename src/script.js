@@ -1,29 +1,28 @@
 const _radius = new WeakMap();
-const _move = new WeakMap();
 
-// - - Hide members with WeakMap  object-oriented programming
+
+// - getters and setters for private members object-oriented programming
 class Circle {
     constructor(radius){
         _radius.set(this, radius) // property private
-       
-        // method private
-        _move.set(this, ()=>{
-            console.log("move", this)
-        })
     };
-    draw(){
-        console.log(_radius.get(this))
-        _move.get(this)();
+    get radius(){
+        return _radius.get(this)
     }
+    set radius(value){
+        if (value <= 0) throw new Error("invlaid radius");
+        _radius.set(this, value);
+    }
+
     
 
 }
 
 const c = new Circle(1)
-c.radius    
-c.draw()
+// console.log(c.radius())
+console.log(c.radius)
 
-// c._move()
+c.radius = 12;
+console.log(c.radius)
 
-
-document.getElementById("text").innerHTML =  " -- Hide members with WeakMap oop"
+document.getElementById("text").innerHTML =  " --getters and setters for private members oop"
