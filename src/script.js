@@ -1,33 +1,116 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML =  "Property description oop"
+document.getElementById("text").innerHTML =  "Constructor Prototype oop"
 
-//  - Property description object-oriented programming
-let person = {name : "amir"}
-console.log(person)
+//  - Constructor Prototypobject-oriented programming
 
+function Circle(randis){
+    this.randis = randis
+};
 
-// new Object()
+const circle = new Circle (1);
 
-console.log(person.toString())
-
-for (let key in person) console.log(key, person[key])
-
-console.log(Object.keys(person))
-
-//ابجکت ما یک سری پراپرتی دارد و هر پراپرتی یک سری اتربیوت دارد  که به ان ملحق شدند
-
-let objectBase = Object.getPrototypeOf(person)
-let descriptor = Object.getOwnPropertyDescriptor(objectBase, 'toString')
-console.log(descriptor)
+// برگرداندن پروتوتایپ یک آبچکت
+Object.getPrototypeOf(circle)
+circle.__proto__
 
 
-Object.defineProperty(person,'name',{
-    writable: false ,   //   // تغییر ندادن مقدار پراپرتی
-    
-    enumerable  : false  // پیمایش نکردن
-});
+//  prototype هر کانسکترتور یک پراپرتی پرتوتایپ دارد
 
-person.name = "mani"
-console.log(person)
+Circle.prototype;  
+/*
+prototype 
+ذاتا یک آبجکت است و
+Circle
+یک کانستراکتور است و کانستراکتور یک ابجکت به وجود می اورد
+و هر آبجکت هم یک پروتوتایپ () دارد
+*/
 
-console.log(Object.keys(person))
+console.log(Circle.prototype === circle.__proto__)
+
+
+/*
+prototype
+وظیفه پروتوتایپ :
+هر کانستراکتور یک ابحکت به وحود اورد پروتوتایپ ان ابجکتی که میخواد به وجود بیاورد مقدار آن را
+ مقدار پروتوتایپ قرار میدهد
+*/
+
+let obj = {};
+console.log(obj.__proto__)
+/*
+OBJECT BASE
+__proto__ =
+null
+__defineGetter__ =
+ƒ __defineGetter__()
+__defineSetter__ =
+ƒ __defineSetter__()
+__lookupGetter__ =
+ƒ __lookupGetter__()
+__lookupSetter__ =
+ƒ __lookupSetter__()
+constructor =
+ƒ Object()
+hasOwnProperty =
+ƒ hasOwnProperty()
+isPrototypeOf =
+ƒ isPrototypeOf()
+propertyIsEnumerable =
+ƒ propertyIsEnumerable()
+toLocaleString =
+ƒ toLocaleString()
+toString =
+ƒ toString()
+valueOf =
+ƒ valueOf()
+*/
+
+Object.prototype
+
+/*
+{__defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, __lookupSetter__: ƒ, …}
+__proto__ =
+null
+__defineGetter__ =
+ƒ __defineGetter__()
+__defineSetter__ =
+ƒ __defineSetter__()
+__lookupGetter__ =
+ƒ __lookupGetter__()
+__lookupSetter__ =
+ƒ __lookupSetter__()
+constructor =
+ƒ Object()
+hasOwnProperty =
+ƒ hasOwnProperty()
+isPrototypeOf =
+ƒ isPrototypeOf()
+propertyIsEnumerable =
+ƒ propertyIsEnumerable()
+toLocaleString =
+ƒ toLocaleString()
+toString =
+ƒ toString()
+arguments =
+ƒ ()
+caller =
+ƒ ()
+length =
+0
+name =
+'toString'
+[[Prototype]] =
+ƒ ()
+[[Scopes]] =
+Scopes[0]
+valueOf =
+ƒ valueOf()
+*/
+
+let array = []
+
+array.__proto__ ;
+
+new Array();
+
+console.log(array.__proto__ === Array.prototype)
