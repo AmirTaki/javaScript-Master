@@ -1,7 +1,7 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML =  "Implementing your own inheritance oop"
+document.getElementById("text").innerHTML =  " Reset Constructor oop"
 
-//  Implementing your own inheritance Prototypobject-oriented programming
+//  Reset Constructore Prototypobject-oriented programming
 
 
 function Sahpe() {
@@ -12,16 +12,12 @@ Sahpe.prototype.duplicate = function(){
 }
 
 
-// Constractor function
-function Circle(radius){
 
-    // 1- Instance members
+function Circle(radius){
     this.radius = radius
- 
  
 };
 
-// 2-prototype members
 Circle.prototype.draw = function () {
     console.log('draw')
 }
@@ -30,24 +26,22 @@ Circle.prototype.duplicate = function() {
     console.log('duplicate')
 }
 
-// object => constarctor function
-const  c1 = new Circle (1)
+
+const  c1 = new Circle (1)  // new Circle.prototype.constructor(1)
 
 
-
-// یک آبچکت برای ما بر میکرداند که که پروتوتایپ آن 
-// shapeBase
-// است
-Object.create(Sahpe.prototype);  // ارث بری میکند از ShapeBase
+Object.create(Sahpe.prototype);  
 
 
 Circle.prototype = Object.create(Sahpe.prototype)
-// Circle(inhertance) => Shape
+// ما در این کار پروتوتایپ سرکل ریست کردیم بهتر است از این دستور اجرا کنیم
+Circle.prototype.constractor = Circle
 
 const s = new Sahpe()
-// c (inheritance) => CircleBase , CircleBase (inheritance) =>  ObjectBase
 const c = new Circle(1)
 
-console.log(Circle)
-console.log(c)
 
+
+// c.draw() warning : reset Constructor (Cricle)
+
+c.duplicate()
