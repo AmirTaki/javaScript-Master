@@ -1,42 +1,36 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML =  " - Hosting in class oop"
+document.getElementById("text").innerHTML =  " - static methods oop"
 
-// - Hosting in class object-oriented programming
+// - static methods  in class object-oriented programming
 
 
-sayHello()
-
-// Function Declaration
-function sayHello(){
-    console.log("hello")
-}
-
-// sayGoogbye() warning
-
-// Function Expression
-const sayGoogbye = function(){
-    console.log("goodbye")
-}
-
-// const c = new Circle(); warning :
-
-// class Declaration
 class Circle {
+    constructor(radius){
+        this.radius = radius
+    }
+    // Instance method
+    draw(){
+    }
 
+    // Static method
+    static parse(str){
+        const radius = JSON.parse(str).radius;
+        return new Circle(radius);
+    }
 }
 
+const circle = new Circle(1)
+console.log(circle)
 
-// const s = new Square() warning
+// console.log(Circle.parse())
+// console.log(circle.parse())
 
-// class Expression
-const Square  = class {
+const circleParse = Circle.parse('{"radius" : 12}')
+console.log(circleParse)
 
-}
 
+// Math.min() static method
 
 /*
-هاستینک برای کلاس ها نداریم
-برای فانکشن 
-declaration 
-داشتیم
+معمولا از استاتیک متد برای ساخت یوتیلیتی استفاده میشود 
 */
