@@ -1,38 +1,49 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML =  " - Calling the parent constructor oop"
+document.getElementById("text").innerHTML =  " - Creating inheritance functions oop"
 
-// - Calling the parent constructor Prototypobject-oriented programming
+// - Creating inheritance functions Prototypobject-oriented programming
 
 
-function Sahpe(color) {
+function Shape(color) {
     this.color = color
 
 }
-Sahpe.prototype.duplicate = function(){
+Shape.prototype.duplicate = function(){
     console.log('duplicate')
 }
 
 
 function Circle(radius, color){
-    // call the parent constructor  warning :// Sahpe(this.color);
-    Sahpe.call(this, color);
-    // Sahpe.apply(this, [color]);
+    Shape.call(this, color)
     this.radius = radius;
  
 };
 
 
-Circle.prototype = Object.create(Sahpe.prototype)
-Circle.prototype.constructor = Circle
+function extend(Child, Parent){
+    Child.prototype = Object.create(Parent.prototype)
+    Child.prototype.constructor = Child
+}
 
+// Circle.prototype = Object.create(Shape.prototype)
+// Circle.prototype.constructor = Circle
+extend(Circle, Shape);
 
 Circle.prototype.draw = function () {
     console.log('draw')
 }
 
-const s = new Sahpe("brown")
+function Squre(size, color){
+    Shape.apply(this, [color])
+    this.size = size;
+}
+
+extend(Squre, Shape)
+
+const s = new Shape("brown")
 const c = new Circle(2, "silver")
-
-// window.color => silver
-
 console.log(c.color)
+
+const sq = new Squre(12, 'blue')
+
+console.log(sq.color)
