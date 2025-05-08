@@ -1,7 +1,7 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML =  " - Method Redefinition oop"
+document.getElementById("text").innerHTML =  " - Polymorphism oop"
 
-// - Method Redefinition Prototypobject-oriented programming
+// - Polymorphism object-oriented programming
 
 // Shape
 function Shape() {}
@@ -21,14 +21,29 @@ function extend(Child, Parent){
     Child.prototype.constructor = Child
 }
 extend(Circle, Shape)
+
 // over ride
 Circle.prototype.duplicate = function (){
-    // Shape.prototype.duplicate()
-    Shape.prototype.duplicate.call(this,)
     console.log("duplicate circle")
 }
 
+function Square() {}
+extend(Square, Shape)
+
+Square.prototype.duplicate = function () {
+    console.log("duplicate Square")
+}
+
+const shapes = [
+    new Circle(), 
+    new Square()
+]
+
+for (let shape of shapes ){
+    shape.duplicate()
+}
+
+
 const c = new Circle();
 
-c.duplicate()
 
