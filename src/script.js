@@ -1,49 +1,34 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML =  " - Creating inheritance functions oop"
+document.getElementById("text").innerHTML =  " - Method Redefinition oop"
 
-// - Creating inheritance functions Prototypobject-oriented programming
+// - Method Redefinition Prototypobject-oriented programming
 
+// Shape
+function Shape() {}
 
-function Shape(color) {
-    this.color = color
-
-}
 Shape.prototype.duplicate = function(){
     console.log('duplicate')
 }
 
-
-function Circle(radius, color){
-    Shape.call(this, color)
-    this.radius = radius;
- 
+// Circle
+function Circle( ){
+    Shape.apply(this, [])
 };
 
-
+// extend
 function extend(Child, Parent){
     Child.prototype = Object.create(Parent.prototype)
     Child.prototype.constructor = Child
 }
-
-// Circle.prototype = Object.create(Shape.prototype)
-// Circle.prototype.constructor = Circle
-extend(Circle, Shape);
-
-Circle.prototype.draw = function () {
-    console.log('draw')
+extend(Circle, Shape)
+// over ride
+Circle.prototype.duplicate = function (){
+    // Shape.prototype.duplicate()
+    Shape.prototype.duplicate.call(this,)
+    console.log("duplicate circle")
 }
 
-function Squre(size, color){
-    Shape.apply(this, [color])
-    this.size = size;
-}
+const c = new Circle();
 
-extend(Squre, Shape)
+c.duplicate()
 
-const s = new Shape("brown")
-const c = new Circle(2, "silver")
-console.log(c.color)
-
-const sq = new Squre(12, 'blue')
-
-console.log(sq.color)
