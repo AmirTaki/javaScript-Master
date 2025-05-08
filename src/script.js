@@ -1,116 +1,101 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML =  "Constructor Prototype oop"
+document.getElementById("text").innerHTML =  "prototype vs instance member oop"
 
-//  - Constructor Prototypobject-oriented programming
+//  - prototype vs instance member Prototypobject-oriented programming
 
-function Circle(randis){
-    this.randis = randis
+
+// Constractor function
+function Circle(radius){
+
+    // 1- Instance members
+    this.radius = radius
+    this.move = function() {
+        console.log("move")
+    }
+ 
+    /* this.draw = ()=>{
+        console.log('draw')
+    }*/
 };
 
-const circle = new Circle (1);
-
-// برگرداندن پروتوتایپ یک آبچکت
-Object.getPrototypeOf(circle)
-circle.__proto__
-
-
-//  prototype هر کانسکترتور یک پراپرتی پرتوتایپ دارد
-
-Circle.prototype;  
+// object => constarctor function
+const  c1 = new Circle (1)
+const  c2 = new Circle (2)
 /*
-prototype 
-ذاتا یک آبجکت است و
-Circle
-یک کانستراکتور است و کانستراکتور یک ابجکت به وجود می اورد
-و هر آبجکت هم یک پروتوتایپ () دارد
+ هر 
+ constranctor 
+یک پروتایپ دارد 
+که مقدار آن با
+__proto__
+هر ابجکت برابر است
 */
 
-console.log(Circle.prototype === circle.__proto__)
 
+//به طریق زیر میتوان هر متد یا پراپرتی داخل پروتایپ هر کانیستراکتور فانکشن قرار داد
+// 2- prototype members
 
-/*
-prototype
-وظیفه پروتوتایپ :
-هر کانستراکتور یک ابحکت به وحود اورد پروتوتایپ ان ابجکتی که میخواد به وجود بیاورد مقدار آن را
- مقدار پروتوتایپ قرار میدهد
-*/
+Circle.prototype.draw =function(){
+    this.move();
+    console.log("draw")
+}
 
-let obj = {};
-console.log(obj.__proto__)
-/*
-OBJECT BASE
-__proto__ =
-null
-__defineGetter__ =
-ƒ __defineGetter__()
-__defineSetter__ =
-ƒ __defineSetter__()
-__lookupGetter__ =
-ƒ __lookupGetter__()
-__lookupSetter__ =
-ƒ __lookupSetter__()
-constructor =
-ƒ Object()
-hasOwnProperty =
-ƒ hasOwnProperty()
-isPrototypeOf =
-ƒ isPrototypeOf()
-propertyIsEnumerable =
-ƒ propertyIsEnumerable()
-toLocaleString =
-ƒ toLocaleString()
-toString =
-ƒ toString()
-valueOf =
-ƒ valueOf()
-*/
+console.log(c1)
+c1.draw()
+c2.draw()
 
-Object.prototype
+console.log(c1.__proto__) 
 
 /*
-{__defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, __lookupSetter__: ƒ, …}
-__proto__ =
-null
-__defineGetter__ =
-ƒ __defineGetter__()
-__defineSetter__ =
-ƒ __defineSetter__()
-__lookupGetter__ =
-ƒ __lookupGetter__()
-__lookupSetter__ =
-ƒ __lookupSetter__()
-constructor =
-ƒ Object()
-hasOwnProperty =
-ƒ hasOwnProperty()
-isPrototypeOf =
-ƒ isPrototypeOf()
-propertyIsEnumerable =
-ƒ propertyIsEnumerable()
-toLocaleString =
-ƒ toLocaleString()
-toString =
-ƒ toString()
-arguments =
-ƒ ()
-caller =
-ƒ ()
-length =
-0
-name =
-'toString'
-[[Prototype]] =
-ƒ ()
-[[Scopes]] =
-Scopes[0]
-valueOf =
-ƒ valueOf()
+در جاوا اسکریپتت به طور کلی دو نوع پراپرتی و متد داریم
+1- Instance members
+2- prototype members
 */
 
-let array = []
 
-array.__proto__ ;
 
-new Array();
 
-console.log(array.__proto__ === Array.prototype)
+Circle.prototype.toString = function(){
+    return "circle with radius :" + this.radius;
+}
+
+console.log(c1.toString())
+
+
+console.log('------------------------------------------------')
+
+function Circle2(radius) {
+    // instace members 
+    this.radius = radius;
+    this.move = function () {
+        this.draw();
+        console.log("move")
+    }
+}
+
+
+// prototype members
+Circle2.prototype.draw = function() {
+    console.log("draw");
+}
+
+
+const objC1 = new Circle2(12)
+
+console.log(objC1)
+
+objC1.move()
+
+
+/* 
+هم در 
+instance members 
+میتوان 
+protototype members
+صدا زد و 
+هم در 
+prototype members
+میتوان 
+instance members
+صدا زد
+
+*/
