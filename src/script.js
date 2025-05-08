@@ -1,49 +1,35 @@
 console.log('javaScript Master');
-document.getElementById("text").innerHTML =  " - Polymorphism oop"
+document.getElementById("text").innerHTML =  " - Classes oop"
 
-// - Polymorphism object-oriented programming
+// - Classes object-oriented programming
+/*
+در واقع کلاس ها سینتکس راحت تر برای همان پروتوکیت اینهریتنس
+آبجکت های وراثت و ...
+*/
 
-// Shape
-function Shape() {}
+/*
+function Circle(radius){
+    this.radius = radius;
+    this.draw = function(){
+        console.log("draw")
+    }
+}
+*/
 
-Shape.prototype.duplicate = function(){
-    console.log('duplicate')
+class Circle {
+    constructor(radius){
+        this.radius = radius;
+        this.move = function () {
+            console.log("move")
+        }
+    }
+    draw(){
+        console.log('draw')
+    }
 }
 
-// Circle
-function Circle( ){
-    Shape.apply(this, [])
-};
+const c = new Circle (1)
 
-// extend
-function extend(Child, Parent){
-    Child.prototype = Object.create(Parent.prototype)
-    Child.prototype.constructor = Child
-}
-extend(Circle, Shape)
+console.log(c)
 
-// over ride
-Circle.prototype.duplicate = function (){
-    console.log("duplicate circle")
-}
-
-function Square() {}
-extend(Square, Shape)
-
-Square.prototype.duplicate = function () {
-    console.log("duplicate Square")
-}
-
-const shapes = [
-    new Circle(), 
-    new Square()
-]
-
-for (let shape of shapes ){
-    shape.duplicate()
-}
-
-
-const c = new Circle();
-
-
+console.log(typeof Circle)  // در واقع کلاس ها در جاوا اسکریپت یه نوع فانکشن هستند
