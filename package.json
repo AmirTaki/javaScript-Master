@@ -1,0 +1,26 @@
+{
+  "name": "js-master",
+  "version": "1.0.0",
+  "description": "",
+  "main": "circle.js",
+  "scripts": {
+    "babel" : "babel --presets env index.js -o build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmirTaki/javaScript-Master.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AmirTaki/javaScript-Master/issues"
+  },
+  "homepage": "https://github.com/AmirTaki/javaScript-Master#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0"
+  }
+}
