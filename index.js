@@ -1,47 +1,49 @@
-document.getElementById("text").innerHTML =  "- Asyncronous : Promise   in JS";
+document.getElementById("text").innerHTML =  "- Asyncronous : async and await   in JS";
 
 /*
-Asyncronous : Promise in callbacks in JavaScript :
+Asyncronous : async and await in JavaScript :
 */
 
-function ball1(){
-    return new Promise((resolve, reject)=>{
+async function ball1(){
+
         if(true){
-            resolve("the ball one reached the end of the hill");
+            return("the ball one reached the end of the hill");
         }
         else {
-            reject("the ball one failed");
+            throw new Error("the ball one failed");
         }
-    } )
 }
-function ball2(){
-    return new Promise((resolve, reject)=>{
+
+async function ball2(){
+
         if(true){
-            resolve("the ball two reached the end of the hill");
+            return("the ball two reached the end of the hill");
         }
         else {
-            reject("the ball two failed");
+            throw new Error("the ball two failed");
         }
-    } )
 }
-function ball3(){
-    return new Promise((resolve, reject)=>{
-        if(false){
-            resolve("the ball three reached the end of the hill");
+
+async function ball3(){
+
+        if(true){
+            return("the ball three reached the end of the hill");
         }
         else {
-            reject("the ball three failed");
+            throw new Error("the ball three failed");
         }
-    } )
 }
-ball1().then((mes)=>{
-    console.log(mes)
-    return ball2();
-}).then((mes)=>{
-    console.log(mes)
-    return ball3()
-}).then((mes)=>{
-    console.log(mes)
-}).catch((error)=>{
-    console.log(error)
-})
+
+// console.log(ball1())
+
+async function execute() {
+    try {
+        console.log(await ball1())
+        console.log(await ball2())
+        console.log(await ball3())
+    }catch(e){
+        console.log(e);
+    }
+   
+}
+execute()
