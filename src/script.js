@@ -1,21 +1,13 @@
+// به هر فایل یک ماژول می گویند
+// - - Modules in JavaScript
 
-// - Redefining the method object-oriented programming
-class Shape {
-    move(){
-        console.log("move")
-    }
-}
+/*
+ ماژول فرمت ها
+1- AMD              => browsers
+2- COMMONDJS        => Node.js
+3 - UMD             => browsers & Node.js
+4- Es6 Modules      => جاوا اسکریپت به صورت دروتی پشتیبانی میکند
 
-class Circle extends Shape{
-    move(){
-        super.move();
-        console.log("move-circle")
-    }
-}
+*/
 
-
-const c = new Circle();
-
-c.move()
-
-document.getElementById("text").innerHTML =  "- Redefining the method oop"
+document.getElementById("text").innerHTML =  "- Modules in JS"
