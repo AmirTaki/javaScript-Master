@@ -1,33 +1,21 @@
 
-// - Inheritance in classes object-oriented programming
-
-class Shape{
-    constructor(color){
-        this.color = color;
-    }
-    move() {
+// - Redefining the method object-oriented programming
+class Shape {
+    move(){
         console.log("move")
     }
-
 }
 
-class Circle extends Shape {
-    constructor(color, radius){
-        super(color);
-        this.radius = radius
-    }
-    draw(){
-        console.log('draw')
+class Circle extends Shape{
+    move(){
+        super.move();
+        console.log("move-circle")
     }
 }
 
 
-const c = new Circle("red", 1000);
+const c = new Circle();
 
-console.log(c)
+c.move()
 
-c.draw();
-c.move();
-console.log(c.color)
-console.log(c.radius)
-document.getElementById("text").innerHTML =  " --Inheritance in classes oop"
+document.getElementById("text").innerHTML =  "- Redefining the method oop"
