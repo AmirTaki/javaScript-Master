@@ -1,28 +1,33 @@
-const _radius = new WeakMap();
 
+// - Inheritance in classes object-oriented programming
 
-// - getters and setters for private members object-oriented programming
-class Circle {
-    constructor(radius){
-        _radius.set(this, radius) // property private
-    };
-    get radius(){
-        return _radius.get(this)
+class Shape{
+    constructor(color){
+        this.color = color;
     }
-    set radius(value){
-        if (value <= 0) throw new Error("invlaid radius");
-        _radius.set(this, value);
+    move() {
+        console.log("move")
     }
-
-    
 
 }
 
-const c = new Circle(1)
-// console.log(c.radius())
-console.log(c.radius)
+class Circle extends Shape {
+    constructor(color, radius){
+        super(color);
+        this.radius = radius
+    }
+    draw(){
+        console.log('draw')
+    }
+}
 
-c.radius = 12;
-console.log(c.radius)
 
-document.getElementById("text").innerHTML =  " --getters and setters for private members oop"
+const c = new Circle("red", 1000);
+
+console.log(c)
+
+c.draw();
+c.move();
+console.log(c.color)
+console.log(c.radius)
+document.getElementById("text").innerHTML =  " --Inheritance in classes oop"
